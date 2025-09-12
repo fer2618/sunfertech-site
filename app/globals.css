@@ -2,22 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  color-scheme: dark light;
 
-:root { color-scheme: dark light; }
+  /* Cores do Tema Claro */
+  --color-bg: #f9fafb;     /* Um cinza muito, muito claro (quase branco) */
+  --color-card: #ffffff;   /* Fundo branco para os cartões para um toque de elevação */
+  --color-text: #1f2937;   /* Cinza escuro para o texto, mais suave que o preto */
+  --color-muted: #6b7280;  /* Cinza para textos menos importantes e ícones */
+  --color-border: #e5e7eb; /* Borda cinza suave para os elementos */
+}
 
+.dark {
+  /* Cores do Tema Escuro */
+  --color-bg: #0f0f0f;
+  --color-card: #171717;
+  --color-text: #FFFFFF;
+  --color-muted: #bdbdbd;
+  --color-border: #2d2d2d;
+}
 
 html, body {
-@apply bg-bg text-white m-0 p-0 antialiased;
+  @apply antialiased;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
 }
-
 
 .container { @apply max-w-[1120px] mx-auto px-4; }
+
 .btn {
-@apply inline-flex items-center gap-2 font-semibold rounded-full px-4 py-3 bg-orange text-black shadow-glow transition;
+  @apply inline-flex items-center gap-2 font-semibold rounded-full px-4 py-3 bg-orange text-black shadow-glow transition;
 }
 .btn:hover { transform: translateY(-1px); }
+
 .btn-outline {
-@apply bg-transparent text-white border border-neutral-700;
+  @apply bg-transparent border;
+  border-color: var(--color-border);
+  color: var(--color-text);
 }
-.card { @apply bg-card border border-neutral-800 rounded-2xl p-4; }
-.badge { @apply inline-flex items-center gap-1 rounded-full px-2 py-1 text-sm bg-neutral-900 border border-neutral-800 text-orange; }
+
+.card {
+  border: 1px solid var(--color-border);
+  background-color: var(--color-card);
+  @apply rounded-2xl p-4;
+}
+
+.badge { 
+  @apply inline-flex items-center gap-1 rounded-full px-2 py-1 text-sm text-orange; 
+  background-color: var(--color-border); /* Fundo do badge com a cor da borda */
+}
