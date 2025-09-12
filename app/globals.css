@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root { color-scheme: dark light; }
+
+
+html, body {
+@apply bg-bg text-white m-0 p-0 antialiased;
+}
+
+
+.container { @apply max-w-[1120px] mx-auto px-4; }
+.btn {
+@apply inline-flex items-center gap-2 font-semibold rounded-full px-4 py-3 bg-orange text-black shadow-glow transition;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-outline {
+@apply bg-transparent text-white border border-neutral-700;
+}
+.card { @apply bg-card border border-neutral-800 rounded-2xl p-4; }
+.badge { @apply inline-flex items-center gap-1 rounded-full px-2 py-1 text-sm bg-neutral-900 border border-neutral-800 text-orange; }
