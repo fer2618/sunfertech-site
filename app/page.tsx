@@ -1,5 +1,4 @@
 import Hero from '../components/Hero'
-import WhyUs from '../components/WhyUs'
 import ServicesGrid from '../components/ServicesGrid'
 import Steps from '../components/Steps'
 import Testimonials from '../components/Testimonials'
@@ -18,7 +17,6 @@ return (
 <JsonLd />
 <Hero />
 <ServicesGrid />
-<WhyUs />
 <Steps />
 <BeforeAfterSlider />
 <Testimonials />
