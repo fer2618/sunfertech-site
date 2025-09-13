@@ -1,14 +1,14 @@
 'use client'
 import Link from 'next/link'
 import ThemeToggle from './ui/ThemeToggle'
-
+import Logo from '../public/logo.jpg' 
 
 export default function Header(){
 return (
 <header className="sticky top-0 z-50 backdrop-blur border-b border-neutral-900 bg-black/60">
 <div className="container h-16 flex items-center justify-between">
 <Link href="/" className="flex items-center gap-2 font-extrabold" aria-label="Sunfertech Home">
-<span className="inline-grid place-items-center w-7 h-7 rounded-md bg-gradient-to-br from-orange to-[#FFA24D] text-black">S</span>
+<img src={Logo.src} alt="Sunfertech Logo" className="h-7 w-7" />
 <span>Sunfertech</span>
 </Link>
 <nav aria-label="Menu principal" className="hidden md:flex items-center gap-2 text-neutral-300">

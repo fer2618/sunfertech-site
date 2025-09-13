@@ -1,38 +1,40 @@
-'use client'
+import { business } from '../lib/seo'
+
 
 export function JsonLd() {
-  const data = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: "Sunfertech Assistência Técnica",
-    image: "https://sunfertech.vercel.app/og-sunfertech.jpg",
-    url: "https://sunfertech.vercel.app/",
-    telephone: "+55 19 97134-4065",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Rio Claro",
-      addressRegion: "SP",
-      addressCountry: "BR"
-    },
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-        "opens": "10:00",
-        "closes": "18:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Saturday"],
-        "opens": "10:00",
-        "closes": "16:00"
-      }
-    ]
-  }
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": business.name,
+          "url": business.url,
+          "telephone": business.phone,
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": business.city,
+            "addressRegion": business.state,
+          },
+          "image": `${business.url}/og-sunfertech.jpg`,
+          "priceRange": "$$",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "08:00",
+              "closes": "18:00"
+            }
+          ],
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "-22.417215",
+            "longitude": "-47.561571"
+          },
+          "hasMap": "https://www.google.com/maps/place/Sunfertech/@-22.417215,-47.561571,15z"
+        })
+      }}
     />
-  )
+  );
 }
