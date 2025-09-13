@@ -42,6 +42,12 @@ if (!post) return { title: 'Artigo não encontrado • Sunfertech' }
 return { title: `${post.title} • Sunfertech`, description: post.content.slice(0, 140) }
 }
 
+export async function generateStaticParams() {
+  return Object.keys(DB).map((slug) => ({
+    slug,
+  }));
+}
+
 
 export default function PostPage({ params }: { params: { slug: string } }){
 const post = DB[params.slug]
