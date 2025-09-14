@@ -145,13 +145,13 @@ export default function PriceCalculator() {
   const calculation = calculateTotal()
   const selectedServices = services.filter(s => factors.services.includes(s.id))
 
-  const generateWhatsAppMessage = () => {
+  const generateWhatsAppMessage = (): string => {
     const { total } = calculation
     const urgencyText = urgencyMultipliers[factors.urgency].name
     const warrantyText = warrantyOptions[factors.warranty].name
     const servicesText = selectedServices.map(s => s.name).join(', ')
 
-    return `💰 ORÇAMENTO SUNFERTECH
+    const message = `💰 ORÇAMENTO SUNFERTECH
 
 📱 *Aparelho:* ${factors.brand} ${factors.model}
 🛠️ *Serviços:* ${servicesText}
@@ -164,7 +164,7 @@ export default function PriceCalculator() {
 
 *Calculado pelo site - sujeito a avaliação técnica`
 
-    return `https://wa.me/5519971344065?text=${encodeURIComponent(generateWhatsAppMessage())}`
+    return `https://wa.me/5519971344065?text=${encodeURIComponent(message)}`
   }
 
   return (
