@@ -4,7 +4,8 @@ import { ThemeProvider } from 'next-themes'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import type { Metadata, Viewport } from 'next'
-import FacebookPixel from './FacebookPixel' // 👈 adicionado
+import { Suspense } from 'react'            // 👈 novo
+import FacebookPixel from './FacebookPixel' // mantém
 
 const poppins = Poppins({ subsets: ['latin'], weight: ['400','500','600','700'] })
 
@@ -37,7 +38,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body className={poppins.className}>
-        <FacebookPixel /> {/* 👈 render do Pixel */}
+        {/* Necessário para permitir CSR bailout do useSearchParams no App Router */}
+        <Suspense fallback={null}>
+          <FacebookPixel />
+        </Suspense>
+
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <Header />
           <main>{children}</main>
