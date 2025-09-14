@@ -31,13 +31,6 @@
       "static/chunks/261-0890f616613a6f39.js",
       "static/chunks/app/page-3cd9a4cda2f69db8.js"
     ],
-    "/garantia/page": [
-      "static/chunks/webpack-2f88a1da6cc0ef56.js",
-      "static/chunks/bd859cd3-509d696adcc2a29b.js",
-      "static/chunks/996-bef8a9417f1902a2.js",
-      "static/chunks/main-app-d4e31f29d1dd8528.js",
-      "static/chunks/app/garantia/page-2e7f3aafa64eb4f8.js"
-    ],
     "/blog/page": [
       "static/chunks/webpack-2f88a1da6cc0ef56.js",
       "static/chunks/bd859cd3-509d696adcc2a29b.js",
@@ -53,12 +46,19 @@
       "static/chunks/main-app-d4e31f29d1dd8528.js",
       "static/chunks/app/blog/[slug]/page-25bd386728101d3b.js"
     ],
+    "/garantia/page": [
+      "static/chunks/webpack-2f88a1da6cc0ef56.js",
+      "static/chunks/bd859cd3-509d696adcc2a29b.js",
+      "static/chunks/996-bef8a9417f1902a2.js",
+      "static/chunks/main-app-d4e31f29d1dd8528.js",
+      "static/chunks/app/garantia/page-2e7f3aafa64eb4f8.js"
+    ],
     "/qualidade-das-pecas/page": [
       "static/chunks/webpack-2f88a1da6cc0ef56.js",
       "static/chunks/bd859cd3-509d696adcc2a29b.js",
       "static/chunks/996-bef8a9417f1902a2.js",
       "static/chunks/main-app-d4e31f29d1dd8528.js",
-      "static/chunks/app/qualidade-das-pecas/page-cb633a2e91367097.js"
+      "static/chunks/app/qualidade-das-pecas/page-62be83e290fa4f55.js"
     ]
   }
 }

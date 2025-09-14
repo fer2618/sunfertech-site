@@ -1,4 +1,0 @@
-User-Agent: *
-Allow: /
-
-Sitemap: https://sunfertech.vercel.app/sitemap.xml
