@@ -1,33 +1,38 @@
 'use client'
-import { useTheme } from 'next-themes'
+
 import { useEffect, useState } from 'react'
 
+export default function ThemeToggle() {
+  const [dark, setDark] = useState(false)
 
-export default function ThemeToggle(){
-const [mounted, setMounted] = useState(false)
-const { theme, setTheme } = useTheme()
+  useEffect(() => {
+    const saved = typeof window !== 'undefined' ? localStorage.getItem('theme') : null
+    const initial = saved ? saved === 'dark' : window.matchMedia?.('(prefers-color-scheme: dark)').matches
+    setDark(initial)
+    document.documentElement.classList.toggle('dark', initial)
+  }, [])
 
+  const toggle = () => {
+    const next = !dark
+    setDark(next)
+    document.documentElement.classList.toggle('dark', next)
+    localStorage.setItem('theme', next ? 'dark' : 'light')
+  }
 
-// useEffect só será executado no lado do cliente, após a montagem do componente.
-useEffect(() => {
-setMounted(true)
-}, [])
-
-
-// Não renderiza nada no servidor para evitar a incompatibilidade
-if (!mounted) {
-return null
+  return (
+    <button
+      onClick={toggle}
+      aria-label={dark ? 'Ativar tema claro' : 'Ativar tema escuro'}
+      title={dark ? 'Tema claro' : 'Tema escuro'}
+      aria-pressed={dark}
+      className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-neutral-700 hover:bg-neutral-900"
+    >
+      {/* Ícone apenas (sem texto) */}
+      <span aria-hidden="true" className="text-lg leading-none">
+        {dark ? '☀️' : '🌙'}
+      </span>
+      <span className="sr-only">{dark ? 'Claro' : 'Escuro'}</span>
+    </button>
+  )
 }
 
-
-const isDark = theme === 'dark'
-return (
-<button
-aria-label={isDark ? 'Alternar para tema claro' : 'Alternar para tema escuro'}
-className="btn btn-outline"
-onClick={() => setTheme(isDark ? 'light' : 'dark')}
->
-{isDark ? '🌙 Escuro' : '☀️ Claro'}
-</button>
-)
-}
