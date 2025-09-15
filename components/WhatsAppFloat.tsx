@@ -13,7 +13,7 @@ export default function WhatsAppFloat() {
       >
         <Image
           src="/whatsapp-icon.svg"  // icone do WhatsApp
-          //alt="WhatsApp"
+          alt="WhatsApp"
           width={28}
           height={28}
          // className="filter brightness-0 invert"  // deixa o ícone branco
