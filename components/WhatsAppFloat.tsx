@@ -8,8 +8,8 @@ export default function WhatsAppFloat() {
         target="_blank"
         rel="noopener"
         className="group flex items-center justify-center w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-green-400"
-        title="Falar no WhatsApp"
-        aria-label="Falar no WhatsApp"
+        //title="Falar no WhatsApp"
+        //aria-label="Falar no WhatsApp"
       >
         <Image
           src="/whatsapp-icon.svg"  // icone do WhatsApp
