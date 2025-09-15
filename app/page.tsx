@@ -32,17 +32,11 @@ const CarouselAdvanced = dynamic(() => import('../components/CarouselAdvanced'),
   loading: () => <div className="h-96 animate-pulse bg-neutral-900 rounded-xl" />
 })
 
-const BrandsFilter = dynamic(() => import('../components/BrandsFilter'), {
-  loading: () => <div className="h-64 animate-pulse bg-neutral-900 rounded-xl" />
-})
 
 const StickyCTA = dynamic(() => import('../components/StickyCTA'), {
   ssr: false // Componente que depende de scroll
 })
 
-const WhatsAppFloat = dynamic(() => import('../components/WhatsAppFloat'), {
-  ssr: false // Componente flutuante não precisa de SSR
-})
 
 // Metadados otimizados para SEO
 export const metadata: Metadata = {
@@ -153,10 +147,7 @@ export default function Home() {
         <CarouselAdvanced />
       </SectionWrapper>
       
-      <SectionWrapper fallback={<SectionSkeleton height="h-64" />}>
-        <BrandsFilter />
-      </SectionWrapper>
-      
+           
       <SectionWrapper>
         <FAQ />
       </SectionWrapper>
@@ -166,10 +157,7 @@ export default function Home() {
         <StickyCTA />
       </SectionWrapper>
       
-      <SectionWrapper>
-        <WhatsAppFloat />
-      </SectionWrapper>
-      
+            
       {/* Preload de recursos importantes */}
       <link rel="preload" href="/hero-sunfertech.webp" as="image" />
       <link rel="preload" href="/antes.jpg" as="image" />

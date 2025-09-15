@@ -6,6 +6,7 @@ import Footer from '../components/Footer'
 import type { Metadata, Viewport } from 'next'
 import { Suspense } from 'react'
 import FacebookPixel from './FacebookPixel'
+import WhatsAppAssistWidget from "../components/WhatsAppAssistWidget";
 
 
 // Otimização de fonte
@@ -341,6 +342,7 @@ export default function RootLayout({
             `
           }}
         />
+        <WhatsAppAssistWidget />
       </body>
     </html>
   )
