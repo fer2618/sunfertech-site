@@ -47,7 +47,7 @@ export default function Hero() {
                   celular em casa
                 </span>
                 <span className="block text-3xl lg:text-4xl text-neutral-300 font-normal">
-                  sem você sair de casa
+                  Nossa equipe vai até você!
                 </span>
               </h1>
             </div>
